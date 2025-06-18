@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import { Search, X } from "lucide-react";
+import { Search } from "lucide-react";
 
 interface SearchBarProps {
   className?: string;
@@ -13,11 +13,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ className = "", onSearch }) => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     onSearch?.(query);
-  };
-
-  const clearSearch = () => {
-    setQuery("");
-    onSearch?.("");
   };
 
   return (
@@ -40,16 +35,6 @@ const SearchBar: React.FC<SearchBarProps> = ({ className = "", onSearch }) => {
           onBlur={() => {}}
           aria-label="Search products"
         />
-        {query && (
-          <button
-            type="button"
-            onClick={clearSearch}
-            className="absolute inset-y-0 right-44 pr-3 flex items-center text-[var(--sub-text)] hover:text-[var(--text)] transition-colors cursor-pointer"
-            aria-label="Clear search"
-          >
-            <X className="h-4 w-4" />
-          </button>
-        )}
         <button
           type="submit"
           className="absolute inset-y-0 right-0 flex items-center transition-colors cursor-pointer"
@@ -57,7 +42,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ className = "", onSearch }) => {
           <h1 className="text-[var(--white)] bg-[var(--main)] rounded-r-md py-2 px-4 text-sm font-semibold">
             Search
           </h1>
-        </button> 
+        </button>
         {/* <select
           name="category"
           id="category"

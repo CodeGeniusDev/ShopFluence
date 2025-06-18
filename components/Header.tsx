@@ -9,7 +9,6 @@ import HeaderMenu from "./HeaderMenu";
 import Carticon from "./Carticon";
 import FavoriteButton from "./FavoriteButton";
 import Profile from "./Profile";
-// import { ClerkLoaded } from "@clerk/nextjs";
 
 const Header: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -34,9 +33,7 @@ const Header: React.FC = () => {
           <SearchBar onSearch={(query) => console.log("Search:", query)} />
         </div>
         <div className="hidden md:flex items-center space-x-4 md:space-x-6">
-          {/* <ClerkLoaded> */}
-            <Profile />
-          {/* </ClerkLoaded> */}
+          <Profile />
           <button
             className="flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer"
             aria-label="Messages"
@@ -126,11 +123,9 @@ const Header: React.FC = () => {
               </div>
               <nav className="flex flex-col space-y-6 py-2">
                 <div onClick={handleNavItemClick} className="px-2">
-                  {/* <ClerkLoaded> */}
-                    <div className="flex flex-col items-center">
-                      <Profile />
-                    </div>
-                  {/* </ClerkLoaded> */}
+                  <div className="flex flex-col items-center">
+                    <Profile />
+                  </div>
                 </div>
                 <button
                   onClick={handleNavItemClick}
