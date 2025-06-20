@@ -1,6 +1,6 @@
 "use client";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
-import { Facebook, Github, Instagram, Linkedin, Youtube } from "lucide-react";
+import { Github, Instagram, Linkedin, Youtube } from "lucide-react";
 import React from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
@@ -26,11 +26,6 @@ const SocialLinks = [
     title: "Linkedin",
     href: "https://www.linkedin.com/",
     icon: <Linkedin className="w-5 h-5" />,
-  },
-  {
-    title: "Facebook",
-    href: "https://www.facebook.com/",
-    icon: <Facebook className="w-5 h-5" />,
   },
   {
     title: "Instagram",
