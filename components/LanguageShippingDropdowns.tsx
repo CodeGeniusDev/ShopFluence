@@ -62,7 +62,7 @@ export default function LanguageShippingDropdowns({
         selectedOption={selectedLanguage}
         onSelect={handleLanguageChange}
         direction="down"
-        className="w-full sm:w-auto"
+        className="w-full sm:w-auto hidden md:block lg:block xl:block 2xl:block"
         buttonClassName={`text-[${colors.text}] hover:text-[${colors.primary}] transition-colors py-3 sm:py-2`}
         menuClassName="right-0"
         ariaLabel="Select language"

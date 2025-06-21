@@ -40,16 +40,16 @@ const HomeBanner = () => {
           />
           <div className="absolute inset-0 bg-black/20 z-[1]"></div>
           <div className="flex flex-col items-start justify-center gap-1 sm:gap-2 p-3 sm:p-4 md:p-5 lg:p-6 absolute z-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 h-full">
-            <h2 className="text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[var(--white)] drop-shadow-md">
+            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[var(--white)] drop-shadow-md">
               ShopFluence
             </h2>
-            <p className="text-sm sm:text-base md:text-lg text-[var(--white)] drop-shadow-md">
+            <p className="text-base sm:text-lg md:text-lg text-[var(--white)] drop-shadow-md">
               Trending Products
             </p>
             <Button
               type="button"
               variant="default"
-              className="bg-[var(--white)] text-xs sm:text-sm text-[var(--main)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md py-1.5 sm:py-2 px-3 sm:px-4 font-bold transition-colors w-fit cursor-pointer mt-1 sm:mt-2"
+              className="bg-[var(--white)] text-sm sm:text-sm text-[var(--main)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md py-2 sm:py-2 px-4 sm:px-4 font-bold transition-colors w-fit cursor-pointer mt-2 sm:mt-2"
             >
               Shop Now
             </Button>
