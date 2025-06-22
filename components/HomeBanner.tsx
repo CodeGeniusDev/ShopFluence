@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
 import Link from "next/link";
+import { SubTitle, Title } from "./ui/text";
 
 const categories = [
   { id: 1, name: "All" },
@@ -46,12 +47,12 @@ const HomeBanner = () => {
             priority
           />
           <div className="flex flex-col items-start justify-start mt-2 lg:mt-8 xs:mt-8 gap-1 sm:gap-2 p-3 sm:p-4 md:p-5 lg:p-6 absolute z-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 h-full">
-            <h2 className="text-xl sm:text-xl md:text-2xl lg:text-2xl text-[var(--text)] drop-shadow-md">
+            <Title className="text-xl sm:text-xl md:text-2xl lg:text-2xl text-[var(--text)] drop-shadow-md">
               Latest Trending
-            </h2>
-            <p className="text-xl sm:text-2xl md:text-2xl lg:text-4xl text-[var(--text)] drop-shadow-md font-bold">
+            </Title>
+            <SubTitle className="text-xl sm:text-2xl md:text-2xl lg:text-4xl text-[var(--text)] drop-shadow-md font-bold">
               Electronic Products
-            </p>
+            </SubTitle>
             <Link href="/shop">
               <Button
                 type="button"
@@ -66,13 +67,13 @@ const HomeBanner = () => {
 
         <div className="grid grid-cols-2 md:flex md:flex-col gap-2 sm:gap-3 w-full md:w-[23%] lg:w-[20%] xl:w-[22%] 2xl:w-[20%] md:min-w-[180px] mt-2 sm:mt-0 px-2 sm:px-0">
           <div className="flex flex-col items-start justify-start gap-1 sm:gap-2 p-2 sm:p-3 bg-[var(--third)] rounded-md h-full col-span-2">
-            <h2 className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-bold text-[var(--text)] break-words">
+            <Title>
               Join Now
-            </h2>
-            <p className="text-xs sm:text-sm md:text-base text-[var(--sub-text)]">
+            </Title>
+            <SubTitle>
               Get daily news on upcoming offers from many suppliers all over the
               world
-            </p>
+            </SubTitle>
             <Button
               type="button"
               variant="default"
@@ -82,14 +83,14 @@ const HomeBanner = () => {
             </Button>
           </div>
           <div className="flex flex-col items-center justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--star)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
-            <h2 className="text-sm md:text-base text-[var(--white)]">
+            <Title className="text-sm md:text-base text-[var(--white)]">
               Get US $10 off with a new supplier
-            </h2>
+            </Title>
           </div>
           <div className="flex flex-col items-center justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--tag)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
-            <h2 className="text-sm md:text-base text-[var(--white)]">
+            <Title className="text-sm md:text-base text-[var(--white)]">
               Send quotes with supplier preferences
-            </h2>
+            </Title>
           </div>
         </div>
 

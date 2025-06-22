@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { FiMail } from "react-icons/fi";
 import { Button } from "./ui/button";
+import { SubTitle, Title } from "./ui/text";
 
 const NewsLetter = () => {
   const [email, setEmail] = useState("");
@@ -11,14 +12,14 @@ const NewsLetter = () => {
   };
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 bg-gray-100 py-12 w-full px-4 sm:px-6 lg:px-8">
-        <h2 className="text-2xl font-bold text-[var(--text)]">
+      <div className="flex flex-col items-center justify-center gap-4 bg-[var(--gray)] py-12 w-full px-4 sm:px-6 lg:px-8">
+        <Title className="text-2xl font-bold text-[var(--text)]">
           Subscribe on our NewsLetter
-        </h2>
-        <p className="text-[var(--sub-text)]">
+        </Title>
+        <SubTitle className="text-[var(--sub-text)]">
           Get daily news on upcoming offers from many suppliers all over the
           world
-        </p>
+        </SubTitle>
         <form className="flex items-center gap-2" onSubmit={handleSubmit}>
           <div className="relative flex-grow">
             <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -33,7 +34,9 @@ const NewsLetter = () => {
               required
             />
           </div>
-          <Button type="submit" variant="default" className='bg-[var(--main)] text-[var(--white)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md p-4 py-5 sm:text-sm font-bold transition-colors cursor-pointer'>Subscribe</Button>
+          <Button type="submit" variant="default" className="bg-[var(--main)] text-[var(--white)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md p-4 py-5 sm:text-sm font-bold transition-colors cursor-pointer">
+            Subscribe
+          </Button>
         </form>
       </div>
     </>

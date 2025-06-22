@@ -1,22 +1,51 @@
 import { cn } from "@/lib/utils";
 
+interface TextProps {
+  children: React.ReactNode;
+  className?: string;
+  as?: React.ElementType;
+}
+
 export const Title = ({
   children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return <h2 className={cn("text-xl md:text-2xl lg:text-3xl font-bold capitalize tracking-wider text-[var(--text)]", className)}>{children}</h2>;
+  as: Component = "h2",
+  ...props
+}: TextProps & React.HTMLAttributes<HTMLElement>) => {
+  return (
+    <Component
+      className={cn(
+        "text-lg sm:text-xl md:text-2xl font-semibold tracking-tight font-sans",
+        "text-[var(--text)]",
+        "line-clamp-2",
+        "transition-colors duration-200",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
 };
 
 export const SubTitle = ({
   children,
   className,
-}: {
-  children: React.ReactNode;
-  className?: string;
-}) => {
-  return <h2 className={cn("text-xl md:text-2xl lg:text-3xl font-bold capitalize tracking-wider text-[var(--text)]", className)}>{children}</h2>;
+  as: Component = "p",
+  ...props
+}: TextProps & React.HTMLAttributes<HTMLElement>) => {
+  return (
+    <Component
+      className={cn(
+        "text-sm sm:text-base text-[var(--sub-text)] tracking-tight font-sans",
+        "font-normal leading-relaxed",
+        "line-clamp-3",
+        "transition-colors duration-200",
+        className
+      )}
+      {...props}
+    >
+      {children}
+    </Component>
+  );
 };
-

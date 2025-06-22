@@ -7,6 +7,7 @@
   --font-poppins: Poppins, Sans-serif;
   --bg: #f7fafc;
   --bg-secondary: #fff0df;
+  --gray: #f3f4f6;
   --text: #1c1c1c;
   --sub-text: #8b96af;
   --border: #dee2e7;
@@ -134,9 +135,19 @@
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold tracking-tight font-sans;
+  }
+  p {
+    @apply leading-relaxed;
+  }
+  button {
+    @apply hover:cursor-pointer transition-colors duration-200;
+  }
 }
 
 body {
   background-color: var(--bg);
+  font-family: var(--font-poppins);
 }
   

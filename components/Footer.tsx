@@ -8,7 +8,6 @@ import { FiArrowRight, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Link from "next/link";
 import LanguageDropdown from "./LanguageDropdown";
 import { footerLinks } from "@/constants/data";
-// import { mainData } from "@/constants/data";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -138,7 +137,7 @@ const Footer = () => {
       <div className="border-t border-[var(--border)]"></div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0 bg-[var(--third)] px-4 sm:px-6 lg:px-8 pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0 bg-[var(--gray)] px-4 sm:px-6 lg:px-8 pb-4">
         <p className="text-xs sm:text-sm text-[var(--sub-text)] text-center sm:text-left font-bold tracking-tight">
           &copy; {currentYear}{" "}
           <Link
