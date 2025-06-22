@@ -4,7 +4,7 @@ import Image from "next/image";
 
 export type DropdownOption = {
   label: string;
-  flagSrc: string; // Made required
+  flagSrc: string;
   value?: string;
 };
 
@@ -94,7 +94,7 @@ export function CustomDropdown({
 
       {isOpen && (
         <div 
-          className={`absolute right-0 ${menuPosition} w-48 bg-white rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-50 ${menuClassName}`}
+          className={`absolute right-0 ${menuPosition} w-48 bg-white rounded-md shadow-lg border border-[var(--border)] ring-black ring-opacity-5 focus:outline-none z-50 ${menuClassName}`}
           role="menu"
           aria-orientation="vertical"
         >

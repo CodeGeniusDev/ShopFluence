@@ -1,7 +1,7 @@
 "use client";
 import React, { useState } from "react";
 import { AlignLeft, X } from "lucide-react";
-import { headerData } from "@/constants/data";
+import { mainData } from "@/constants/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import SocialMedia from "./SocialMedia";
@@ -66,7 +66,7 @@ const MobileMenu = () => {
             
             <div className="flex-1 p-4 overflow-y-auto">
               <nav className="flex flex-col space-y-4 mb-6">
-                {headerData?.map((Item) => {
+                {mainData?.map((Item) => {
                   const isActive = Item.href === '/' 
                     ? pathname === '/'
                     : pathname.startsWith(Item.href);

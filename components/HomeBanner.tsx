@@ -1,30 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import { Button } from "./ui/button";
+import Link from "next/link";
 
-const Categories = [
-  "All",
-  "Electronics",
-  "Clothing",
-  "Footwear",
-  "Accessories",
-  "Beauty",
-  "Home & Living",
-  "Sports",
-  "Health & Beauty",
+const categories = [
+  { id: 1, name: "All" },
+  { id: 2, name: "Electronics" },
+  { id: 3, name: "Clothing" },
+  { id: 4, name: "Footwear" },
+  { id: 5, name: "Accessories" },
+  { id: 6, name: "Beauty" },
+  { id: 7, name: "Home & Living" },
+  { id: 8, name: "Sports" },
+  { id: 9, name: "Health & Beauty" },
 ];
 
 const HomeBanner = () => {
+  const [activeCategory, setActiveCategory] = useState(categories[0].id);
   return (
     <div className="w-full px-0 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
-      <div className="flex flex-col sm:mx-2 md:mx-4 lg:mx-6 justify-center items-center md:items-stretch md:flex-row gap-3 md:gap-4 p-2 md:px-3 md:py-4 my-0 sm:my-3 md:my-4 w-full max-w-[2000px] mx-auto bg-[var(--white)] border-0 sm:border border-[var(--sub-text)] rounded-none sm:rounded-md">
+      <div className="flex flex-col sm:mx-2 md:mx-4 lg:mx-6 justify-center items-center md:items-stretch md:flex-row gap-3 md:gap-4 p-2 md:px-3 md:py-4 my-0 sm:my-3 md:my-4 w-full max-w-[2000px] mx-auto bg-[var(--white)] border-0 sm:border border-[var(--border)] rounded-none sm:rounded-md">
         <div className="hidden md:grid grid-cols-1 w-full md:w-[22%] lg:w-[20%] xl:w-[18%] 2xl:w-1/5 overflow-y-auto max-h-[500px] pr-1">
-          {Categories.map((category) => (
+          {categories.map((category) => (
             <button
-              key={category}
-              className="px-3 py-2 w-full rounded-md font-medium hover:bg-[var(--third)] focus:bg-[var(--third)] focus:font-bold transition-colors cursor-pointer text-sm md:text-base text-[var(--text)] text-left flex items-center hover:border-[var(--white)]"
+              key={category.id}
+              className={`px-3 py-2 w-full rounded-md transition-colors cursor-pointer text-sm md:text-base text-[var(--text)] text-left flex items-center hover:border-[var(--white)] ${
+                activeCategory === category.id
+                  ? "bg-[var(--third)] hover:bg-[var(--second)] font-bold"
+                  : "font-medium hover:bg-[var(--third)]"
+              }`}
+              onClick={() => setActiveCategory(category.id)}
             >
-              {category}
+              {category.name}
             </button>
           ))}
         </div>
@@ -38,21 +45,22 @@ const HomeBanner = () => {
             className="w-full h-full object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/20 z-[1]"></div>
-          <div className="flex flex-col items-start justify-center gap-1 sm:gap-2 p-3 sm:p-4 md:p-5 lg:p-6 absolute z-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 h-full">
-            <h2 className="text-2xl xs:text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-[var(--white)] drop-shadow-md">
-              ShopFluence
+          <div className="flex flex-col items-start justify-start mt-2 lg:mt-8 xs:mt-8 gap-1 sm:gap-2 p-3 sm:p-4 md:p-5 lg:p-6 absolute z-10 w-full sm:w-4/5 md:w-3/4 lg:w-2/3 h-full">
+            <h2 className="text-xl sm:text-xl md:text-2xl lg:text-2xl text-[var(--text)] drop-shadow-md">
+              Latest Trending
             </h2>
-            <p className="text-base sm:text-lg md:text-lg text-[var(--white)] drop-shadow-md">
-              Trending Products
+            <p className="text-xl sm:text-2xl md:text-2xl lg:text-4xl text-[var(--text)] drop-shadow-md font-bold">
+              Electronic Products
             </p>
-            <Button
-              type="button"
-              variant="default"
-              className="bg-[var(--white)] text-sm sm:text-sm text-[var(--main)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md py-2 sm:py-2 px-4 sm:px-4 font-bold transition-colors w-fit cursor-pointer mt-2 sm:mt-2"
-            >
-              Shop Now
-            </Button>
+            <Link href="/shop">
+              <Button
+                type="button"
+                variant="default"
+                className="bg-[var(--white)] text-sm sm:text-sm text-[var(--text)] hover:bg-[var(--white)] hover:text-[var(--main)] border hover:border-[var(--black)] rounded-md py-2 sm:py-2 px-4 sm:px-4 font-bold transition-colors w-fit cursor-pointer mt-2 sm:mt-2"
+              >
+                Learn more
+              </Button>
+            </Link>
           </div>
         </div>
 
@@ -73,12 +81,12 @@ const HomeBanner = () => {
               Join Now
             </Button>
           </div>
-          <div className="flex flex-col items-start justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--star)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--star)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
             <h2 className="text-sm md:text-base text-[var(--white)]">
               Get US $10 off with a new supplier
             </h2>
           </div>
-          <div className="flex flex-col items-start justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--tag)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
+          <div className="flex flex-col items-center justify-center p-2 sm:p-3 md:px-3 md:py-4 bg-[var(--tag)] rounded-md cursor-pointer h-full min-h-[70px] sm:min-h-[80px] w-full">
             <h2 className="text-sm md:text-base text-[var(--white)]">
               Send quotes with supplier preferences
             </h2>
@@ -86,10 +94,14 @@ const HomeBanner = () => {
         </div>
 
         <div className="md:hidden w-full mt-2 max-w-[500px] mx-auto">
-          <select className="w-full p-2 text-sm border border-[var(--sub-text)] rounded-md bg-[var(--white)] text-[var(--text)] focus:outline-none focus:ring-1 focus:ring-[var(--main)]">
-            {Categories.map((category) => (
-              <option key={category} value={category}>
-                {category}
+          <select
+            value={activeCategory}
+            onChange={(e) => setActiveCategory(Number(e.target.value))}
+            className="w-full p-2 text-sm border border-[var(--sub-text)] rounded-md bg-[var(--white)] text-[var(--text)] focus:outline-none focus:ring-1 focus:ring-[var(--main)]"
+          >
+            {categories.map((category) => (
+              <option key={category.id} value={category.id}>
+                {category.name}
               </option>
             ))}
           </select>

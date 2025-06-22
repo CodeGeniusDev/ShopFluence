@@ -1,5 +1,5 @@
 "use client";
-import { headerData } from "@/constants/data";
+import { mainData } from "@/constants/data";
 import Link from "next/link";
 import React from "react";
 import LanguageShippingDropdowns from "./LanguageShippingDropdowns";
@@ -12,13 +12,13 @@ const HeaderMenu = () => {
   return (
     <div className="relative">
       {/* Desktop Menu */}
-      <nav className="sticky top-0 z-40 w-full px-4 py-1 md:px-10 flex items-center justify-between bg-[var(--white)] border-y border-[var(--sub-text)]">
+      <nav className="sticky top-0 z-40 w-full px-4 py-1 md:px-10 flex items-center justify-between bg-[var(--white)] border-y border-[var(--border)]">
         {/* Mobile Menu Button */}
         <MobileMenu />
 
         {/* Desktop Navigation */}
         <div className="hidden md:flex gap-6 p-2 items-center">
-          {headerData?.map((Item) => {
+          {mainData?.map((Item) => {
             const isActive = Item.href === '/' 
               ? pathname === '/'
               : pathname.startsWith(Item.href);

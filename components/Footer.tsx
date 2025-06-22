@@ -7,56 +7,11 @@ import SocialMedia from "./SocialMedia";
 import { FiArrowRight, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import Link from "next/link";
 import LanguageDropdown from "./LanguageDropdown";
+import { footerLinks } from "@/constants/data";
+// import { mainData } from "@/constants/data";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const footerLinks = [
-    {
-      title: "Quick Links",
-      links: ["Home", "Shop", "Categories", "Deals", "New Arrivals"],
-      href: ["/", "/shop", "/categories", "/deals", "/new-arrivals"],
-    },
-    {
-      title: "Customer Service",
-      links: [
-        "Contact Us",
-        "FAQs",
-        "Shipping Info",
-        "Returns & Exchanges",
-        "Size Guide",
-      ],
-      href: [
-        "/contact",
-        "/faqs",
-        "/shipping-info",
-        "/returns-exchanges",
-        "/size-guide",
-      ],
-    },
-    {
-      title: "About Us",
-      links: ["Our Story", "Careers", "Blog", "Press", "Testimonials"],
-      href: ["/our-story", "/careers", "/blog", "/press", "/testimonials"],
-    },
-    {
-      title: "Legal",
-      links: [
-        "Privacy Policy",
-        "Terms of Service",
-        "Shipping Policy",
-        "Return Policy",
-        "Cookie Policy",
-      ],
-      href: [
-        "/privacy-policy",
-        "/terms-of-service",
-        "/shipping-policy",
-        "/return-policy",
-        "/cookie-policy",
-      ],
-    },
-  ];
 
   const [openSections, setOpenSections] = useState<{ [key: number]: boolean }>(
     {}
@@ -121,10 +76,10 @@ const Footer = () => {
                   }`}
                 >
                   <ul className="pt-1 sm:pt-2">
-                    {section.links.map((link, linkIndex) => (
+                    {section?.links?.map((link, linkIndex) => (
                       <li key={linkIndex} className="group relative">
                         <Link
-                          href={section.href[linkIndex]}
+                          href={section?.href[linkIndex]}
                           className="text-sm text-[var(--sub-text)] hover:text-[var(--main)] transition-colors duration-200 inline-block w-full py-1.5 pl-5 sm:pl-5 cursor-pointer"
                         >
                           <FiArrowRight className="absolute left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 text-[var(--main)] w-4 h-4" />
@@ -177,21 +132,27 @@ const Footer = () => {
             </div>
           </div>
         </div>
-
-        {/* Divider */}
-        <div className="border-t border-[var(--sub-text)]"></div>
-
-        {/* Bottom Bar */}
-        <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0">
-          <p className="text-xs sm:text-sm text-[var(--sub-text)] text-center sm:text-left font-bold tracking-tight">
-            &copy; {currentYear} <Link href="/" className="text-[var(--main)] hover:text-[var(--white)] hover:bg-[var(--main)] rounded-full border hover:border-[var(--text)] font-bold transition-colors cursor-pointer p-2">
-            ShopFluence.</Link> All rights reserved.
-          </p>
-          <div className="relative">
-            <LanguageDropdown />
-          </div>
-        </div>
       </Container>
+
+      {/* Divider */}
+      <div className="border-t border-[var(--border)]"></div>
+
+      {/* Bottom Bar */}
+      <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0 bg-[var(--third)] px-4 sm:px-6 lg:px-8 pb-4">
+        <p className="text-xs sm:text-sm text-[var(--sub-text)] text-center sm:text-left font-bold tracking-tight">
+          &copy; {currentYear}{" "}
+          <Link
+            href="/"
+            className="text-[var(--main)] hover:text-[var(--white)] hover:bg-[var(--main)] rounded-full border hover:border-[var(--main)] font-bold transition-colors cursor-pointer p-2"
+          >
+            ShopFluence.
+          </Link>{" "}
+          All rights reserved.
+        </p>
+        <div className="relative">
+          <LanguageDropdown />
+        </div>
+      </div>
     </footer>
   );
 };

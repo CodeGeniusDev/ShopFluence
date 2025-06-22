@@ -101,7 +101,7 @@ const Header: React.FC = () => {
         >
           <div className="flex flex-col h-full">
             {/* Close Button */}
-            <div className="flex justify-between p-4 border-b border-gray-200">
+            <div className="flex justify-between p-4 border-b border-[var(--border)]">
               <Logo />
               <button
                 className="text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer text-base"
