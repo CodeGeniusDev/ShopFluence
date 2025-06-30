@@ -5,6 +5,8 @@ import HomeBanner from "@/components/HomeBanner";
 import ProductGrid from "@/components/ProductGrid";
 import DealsAndOffers from "@/components/DealsAndOffers";
 import HomeAndOutdoor from "@/components/HomeAndOutdoor";
+import QuoteRequest from "@/components/QuoteRequest";
+import SuppliersByRegion from "@/components/SuppliersByRegion";
 
 const page = () => {
   return (
@@ -13,7 +15,9 @@ const page = () => {
         <HomeBanner />
         <DealsAndOffers />
         <HomeAndOutdoor />
+        <QuoteRequest />
         <ProductGrid />
+        <SuppliersByRegion />
       </Container>
     </>
   );

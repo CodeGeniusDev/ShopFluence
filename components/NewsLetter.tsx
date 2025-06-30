@@ -12,7 +12,7 @@ const NewsLetter = () => {
   };
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-4 bg-[var(--gray)] py-12 w-full px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-col items-center justify-center gap-4 bg-[var(--gray)] py-12 w-full px-4 sm:px-6 lg:px-8 mt-6">
         <Title className="text-2xl font-bold text-[var(--text)]">
           Subscribe on our NewsLetter
         </Title>
