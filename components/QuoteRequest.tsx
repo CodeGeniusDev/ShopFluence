@@ -53,7 +53,7 @@ const QuoteRequest = () => {
 
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="max-w-6xl mx-auto">
-            <div className="bg-white/5 backdrop-blur-sm rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+            <div className="bg-white/5 backdrop-blur-sm border border-[var(--white)]/20 rounded-2xl overflow-hidden shadow-2xl">
               <div className="grid grid-cols-1 lg:grid-cols-2">
                 <div className="p-8 md:p-10 lg:p-12 text-white">
                   <div className="max-w-md mx-auto lg:mx-0">

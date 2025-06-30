@@ -48,7 +48,7 @@ const ExtraServices = () => {
                 <Image
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-full object-cover filter brightness-80"
+                  className="w-full h-full object-cover filter brightness-70"
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   priority={service.id < 4}

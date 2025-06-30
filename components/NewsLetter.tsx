@@ -9,6 +9,8 @@ const NewsLetter = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log(email);
+    setEmail("");
+    alert("Thank you for subscribing to our newsletter!");
   };
   return (
     <>
