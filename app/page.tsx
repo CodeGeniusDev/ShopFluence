@@ -4,6 +4,7 @@ import Container from "@/components/Container";
 import HomeBanner from "@/components/HomeBanner";
 import ProductGrid from "@/components/ProductGrid";
 import DealsAndOffers from "@/components/DealsAndOffers";
+import HomeAndOutdoor from "@/components/HomeAndOutdoor";
 
 const page = () => {
   return (
@@ -11,6 +12,7 @@ const page = () => {
       <Container>
         <HomeBanner />
         <DealsAndOffers />
+        <HomeAndOutdoor />
         <ProductGrid />
       </Container>
     </>
