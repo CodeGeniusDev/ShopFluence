@@ -25,7 +25,7 @@ const Footer = () => {
 
   return (
     <footer className="bg-[var(--white)] text-[var(--text)]">
-      <Container className="py-6 sm:py-8 md:py-6 px-4 sm:px-6 lg:px-8">
+      <Container className="py-6 sm:py-8 md:py-6 px-4 sm:px-6 lg:px-10">
         {/* Main Footer Content */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-6 gap-16 mb-12">
           {/* Brand Info */}
@@ -137,7 +137,7 @@ const Footer = () => {
       <div className="border-t border-[var(--border)]"></div>
 
       {/* Bottom Bar */}
-      <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0 bg-[var(--gray)] px-4 sm:px-6 lg:px-8 pb-4">
+      <div className="flex flex-col sm:flex-row justify-between items-center pt-6 gap-4 sm:gap-0 bg-[var(--gray)] max-w-screen mx-auto px-0 sm:px-4 md:px-8 lg:px-8 xl:px-20 2xl:px-24">
         <p className="text-xs sm:text-sm text-[var(--sub-text)] text-center sm:text-left font-bold tracking-tight">
           &copy; {currentYear}{" "}
           <Link

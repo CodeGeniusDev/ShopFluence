@@ -19,8 +19,8 @@ const categories = [
 const HomeBanner = () => {
   const [activeCategory, setActiveCategory] = useState(categories[0].id);
   return (
-    <div className="w-full px-0 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12">
-      <div className="flex flex-col sm:mx-2 md:mx-4 lg:mx-6 justify-center items-center md:items-stretch md:flex-row gap-3 md:gap-4 p-2 md:px-3 md:py-4 my-0 sm:my-3 md:my-4 w-full max-w-[2000px] mx-auto bg-[var(--white)] border-0 sm:border border-[var(--border)] rounded-none sm:rounded-md">
+    <div className="w-full">
+      <div className="flex flex-col justify-center items-center md:items-stretch md:flex-row gap-3 md:gap-4 p-2 md:px-3 md:py-4 my-0 sm:my-3 md:my-4 mx-auto bg-[var(--white)] border-0 sm:border border-[var(--border)] rounded-none sm:rounded-md">
         <div className="hidden md:grid grid-cols-1 w-full md:w-[22%] lg:w-[20%] xl:w-[18%] 2xl:w-1/5 overflow-y-auto max-h-[500px] pr-1">
           {categories.map((category) => (
             <button

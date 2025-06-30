@@ -12,7 +12,7 @@ const HeaderMenu = () => {
   return (
     <div className="relative">
       {/* Desktop Menu */}
-      <nav className="sticky top-0 z-40 w-full px-4 py-1 md:px-10 flex items-center justify-between bg-[var(--white)] border-y border-[var(--border)]">
+      <nav className="sticky top-0 z-40 w-full py-1  flex items-center justify-between bg-[var(--white)] border-y border-[var(--border)] max-w-screen mx-auto px-4 sm:px-6 md:px-12 lg:px-8 xl:px-20 2xl:px-24">
         {/* Mobile Menu Button */}
         <MobileMenu />
 
