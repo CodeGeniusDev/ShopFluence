@@ -38,10 +38,13 @@ const Header: React.FC = () => {
             <MessageCircle className="w-6 h-6" />
             <span className="text-xs mt-1">Message</span>
           </button>
-          <div className="group flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--warn)] font-bold transition-colors cursor-pointer">
+          <button
+            className="group flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--warn)] font-bold transition-colors cursor-pointer"
+            aria-label="Orders"
+          >
             <FavoriteButton className="group-hover:text-[var(--warn)]" />
             <span className="text-xs mt-1">Orders</span>
-          </div>
+          </button>
           <button
             className="flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer"
             aria-label="Shopping cart"
