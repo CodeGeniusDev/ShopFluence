@@ -16,7 +16,6 @@ const Header: React.FC = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // Close menu when clicking on navigation items
   const handleNavItemClick = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
@@ -25,10 +24,8 @@ const Header: React.FC = () => {
 
   return (
     <header className="relative">
-      {/* Desktop Header */}
       <Container className="bg-white flex justify-between items-center py-4 px-4 md:px-12">
         <Logo />
-        {/* SearchBar with classes preserved and wider width */}
         <div className="hidden md:block w-full max-w-lg mx-6">
           <SearchBar onSearch={(query) => console.log("Search:", query)} />
         </div>
@@ -41,13 +38,10 @@ const Header: React.FC = () => {
             <MessageCircle className="w-6 h-6" />
             <span className="text-xs mt-1">Message</span>
           </button>
-          <button
-            className="flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer"
-            aria-label="Orders"
-          >
-            <FavoriteButton />
+          <div className="group flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--warn)] font-bold transition-colors cursor-pointer">
+            <FavoriteButton className="group-hover:text-[var(--warn)]" />
             <span className="text-xs mt-1">Orders</span>
-          </button>
+          </div>
           <button
             className="flex flex-col items-center text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer"
             aria-label="Shopping cart"
@@ -56,7 +50,6 @@ const Header: React.FC = () => {
             <span className="text-xs mt-1">My cart</span>
           </button>
         </div>
-        {/* Hamburger Menu Button for Tablet/Mobile */}
         <button
           className="md:hidden text-[var(--sub-text)] hover:text-[var(--main)] font-bold transition-colors cursor-pointer"
           onClick={toggleMenu}
@@ -75,7 +68,6 @@ const Header: React.FC = () => {
         <HeaderMenu />
       </div>
 
-      {/* Mobile/Tablet Menu */}
       <div
         id="mobile-menu"
         className={`fixed inset-0 z-50 md:hidden transition-opacity duration-300 ease-in-out ${
@@ -84,13 +76,11 @@ const Header: React.FC = () => {
             : "opacity-0 pointer-events-none"
         }`}
       >
-        {/* Backdrop */}
         <div
           className="absolute inset-0 bg-black opacity-50 backdrop-blur-lg blur-lg"
           onClick={toggleMenu}
           aria-hidden="true"
         ></div>
-        {/* Menu Content */}
         <div
           className={`absolute top-0 right-0 w-80 max-w-[80vw] h-full bg-white shadow-xl transition-transform duration-300 ease-in-out ${
             isMenuOpen ? "translate-x-0" : "translate-x-full"
@@ -100,7 +90,6 @@ const Header: React.FC = () => {
           aria-label="Mobile menu"
         >
           <div className="flex flex-col h-full">
-            {/* Close Button */}
             <div className="flex justify-between p-4 border-b border-[var(--border)]">
               <Logo />
               <button
@@ -111,7 +100,6 @@ const Header: React.FC = () => {
                 <X className="w-6 h-6" />
               </button>
             </div>
-            {/* Menu Content */}
             <div className="flex-1 p-4 overflow-y-auto">
               <div className="mb-6">
                 <SearchBar2
