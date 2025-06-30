@@ -7,6 +7,7 @@ import DealsAndOffers from "@/components/DealsAndOffers";
 import HomeAndOutdoor from "@/components/HomeAndOutdoor";
 import QuoteRequest from "@/components/QuoteRequest";
 import SuppliersByRegion from "@/components/SuppliersByRegion";
+import ExtraServices from "@/components/ExtraServices";
 
 const page = () => {
   return (
@@ -17,6 +18,7 @@ const page = () => {
         <HomeAndOutdoor />
         <QuoteRequest />
         <ProductGrid />
+        <ExtraServices />
         <SuppliersByRegion />
       </Container>
     </>
