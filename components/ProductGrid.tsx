@@ -2,69 +2,139 @@
 import React from "react";
 import { Title } from "./ui/text";
 import Image from "next/image";
+import { Star } from 'lucide-react';
 
-const products = [
+interface Product {
+  id: number;
+  name: string;
+  price: string;
+  image: string;
+  description: string;
+  rating?: number;
+  reviewCount?: number;
+  link?: string;
+}
+
+export const products: Product[] = [
   {
+    id: 1,
     name: "Smartwatch",
     price: "$199",
     image: "/images/products/product_24.jpg",
-    description: "Smart watch with fitness tracker and heart rate monitor."
+    description: "Smart watch with fitness tracker and heart rate monitor.",
+    rating: 4.5,
+    reviewCount: 128,
+    link: "/product/1"
   },
   {
+    id: 2,
     name: "Winter Jacket",
     price: "$89",
     image: "/images/products/product_25.jpg",
-    description: "Warm and stylish winter jacket for cold weather."
+    description: "Warm and stylish winter jacket for cold weather.",
+    rating: 4.2,
+    reviewCount: 89,
+    link: "/product/2"
   },
   {
+    id: 3,
     name: "Polo T-Shirt",
     price: "$29",
     image: "/images/products/product_26.jpg",
-    description: "Classic fit polo t-shirt in various colors."
+    description: "Classic fit polo t-shirt in various colors.",
+    rating: 4.0,
+    reviewCount: 215,
+    link: "/product/3"
   },
   {
+    id: 4,
     name: "Denim Shorts",
     price: "$39",
     image: "/images/products/product_27.jpg",
-    description: "Comfortable denim shorts for summer."
+    description: "Comfortable denim shorts for summer.",
+    rating: 4.3,
+    reviewCount: 67,
+    link: "/product/4"
   },
   {
+    id: 5,
     name: "Blue Backpack",
     price: "$49",
     image: "/images/products/product_28.jpg",
-    description: "Durable backpack with multiple compartments."
+    description: "Durable backpack with multiple compartments.",
+    rating: 4.7,
+    reviewCount: 142,
+    link: "/product/5"
   },
   {
+    id: 6,
     name: "Leather Wallet",
     price: "$45",
     image: "/images/products/product_29.jpg",
-    description: "Genuine leather wallet with RFID protection."
+    description: "Genuine leather wallet with RFID protection.",
+    rating: 4.1,
+    reviewCount: 93,
+    link: "/product/6"
   },
   {
+    id: 7,
     name: "Formal Blazer",
     price: "$129",
     image: "/images/products/product_30.jpg",
-    description: "Slim fit formal blazer for office wear."
+    description: "Slim fit formal blazer for office wear.",
+    rating: 3.2,
+    reviewCount: 12,
+    link: "/product/7"
   },
   {
+    id: 8,
     name: "Clay Pot",
     price: "$24",
     image: "/images/products/product_31.jpg",
-    description: "Handcrafted clay pot for plants."
+    description: "Handcrafted clay pot for plants.",
+    rating: 4.2,
+    reviewCount: 128,
+    link: "/product/8"
   },
   {
+    id: 9,
     name: "Electric Kettle",
     price: "$35",
     image: "/images/products/product_32.jpg",
-    description: "Fast boiling electric kettle with auto shut-off."
+    description: "Fast boiling electric kettle with auto shut-off.",
+    rating: 2.2,
+    reviewCount: 12,
+    link: "/product/9"
   },
   {
+    id: 10,
     name: "Wireless Headphones",
     price: "$99",
     image: "/images/products/product_33.jpg",
-    description: "Noise cancelling wireless headphones."
+    description: "Noise cancelling wireless headphones.",
+    rating: 4.6,
+    reviewCount: 178,
+    link: "/product/10"
   },
 ];
+
+// Render star rating
+const renderRating = (rating: number, reviewCount: number) => {
+  return (
+    <div className="flex items-center mt-1">
+      {[1, 2, 3, 4, 5].map((star) => (
+        <Star
+          key={star}
+          className={`h-3 w-3 ${
+            star <= Math.round(rating) ? 'text-yellow-400' : 'text-gray-300'
+          }`}
+          fill={star <= Math.round(rating) ? 'currentColor' : 'none'}
+        />
+      ))}
+      <span className="ml-1 text-xs text-gray-500">({reviewCount})</span>
+    </div>
+  );
+};
 
 const ProductGrid = () => {
   return (
@@ -94,9 +164,12 @@ const ProductGrid = () => {
                   <Title className="text-sm sm:text-base md:text-lg text-[var(--text)] text-left mb-1 sm:mb-2 line-clamp-2">
                     {product.name}
                   </Title>
-                  <p className="text-[var(--main)] text-sm sm:text-base font-semibold text-left mb-1 sm:mb-2">
+                  <p className="text-[var(--main)] text-sm sm:text-base font-semibold text-left mb-1">
                     {product.price}
                   </p>
+                  {product.rating && product.reviewCount !== undefined && (
+                    renderRating(product.rating, product.reviewCount)
+                  )}
                 </div>
                 <p className="text-[var(--sub-text)] text-xs sm:text-sm text-left line-clamp-2 sm:line-clamp-2">
                   {product.description}
